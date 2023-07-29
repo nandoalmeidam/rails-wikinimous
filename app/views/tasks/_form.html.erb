@@ -1,0 +1,19 @@
+<%= form_with model: task, url: task.persisted? ? task_path(task) : tasks_path do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_area :details, class: 'form-control' %>
+  </div>
+
+  <div class="checkbox">
+    <%= f.label :completed do %>
+      <%= f.check_box :completed %> Completed
+    <% end %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary mt-3' %>
+<% end %>
